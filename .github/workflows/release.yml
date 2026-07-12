@@ -11,6 +11,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
+      - name: Run discovery
+        shell: pwsh
+        run: |
+          Set-StrictMode -Version Latest
+          $ErrorActionPreference = 'Stop'
+          .\scripts\pqc_discovery.ps1
       - name: Build release zip
         shell: pwsh
         run: |
@@ -18,11 +24,21 @@ jobs:
           $ErrorActionPreference = 'Stop'
           $Version = $env:GITHUB_REF_NAME -replace '^v',''
           $Manifest = 'dist/package_manifest.json'
-          if (-not (Test-Path $Manifest)) { Write-Error 'dist/package_manifest.json missing'; exit 1 }
+          if (-not (Test-Path $Manifest)) {
+            Write-Error 'dist/package_manifest.json missing'
+            exit 1
+          }
           $manifest = Get-Content $Manifest -Raw | ConvertFrom-Json
-          if ($manifest.sku -ne 'ZQM-PQC-READINESS-001') { Write-Error "Unexpected SKU: $($manifest.sku)"; exit 1 }
+          if ($manifest.sku -ne 'ZQM-PQC-READINESS-001') {
+            Write-Error "Unexpected SKU: $($manifest.sku)"
+            exit 1
+          }
+          if ($manifest.release_artifact_glob -ne 'dist/pqc_readiness_release_package_v*.zip') {
+            Write-Error "Unexpected release_artifact_glob: $($manifest.release_artifact_glob)"
+            exit 1
+          }
           .\scripts\build_release.ps1 -Version $Version
-          $zip = Get-Item "dist\zqm_attestation_release_package_v${Version}.zip"
+          $zip = Get-Item "dist\pqc_readiness_release_package_v${Version}.zip"
           $sha = (Get-FileHash -Path $zip.FullName -Algorithm SHA256).Hash
           Set-Content -Path "$($zip.FullName).sha256" -Value "$sha  $($zip.Name)" -Encoding UTF8
           Write-Host "::group::Artifacts"
@@ -34,7 +50,7 @@ jobs:
         with:
           generate_release_notes: true
           files: |
-            dist/zqm_attestation_release_package_*.zip
-            dist/zqm_attestation_release_package_*.zip.sha256
+            dist/pqc_readiness_release_package_*.zip
+            dist/pqc_readiness_release_package_*.zip.sha256
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -69,8 +69,8 @@ Write-Evidence (Join-Path $evidenceDir 'pqc_legacy_certutil.txt') $legacy
 $kems = @('kyber','dilithium','ml-kem','ml-dsa')
 $matches = @()
 foreach ($c in $cng) {
-    $subject = ($c.Subject ?? '').ToLower()
-    $friendly = ($c.FriendlyName ?? '').ToLower()
+    $subject = if ($c.Subject) { $c.Subject.ToLower() } else { '' }
+    $friendly = if ($c.FriendlyName) { $c.FriendlyName.ToLower() } else { '' }
     $text = "$subject $friendly"
     foreach ($k in $kems) {
         if ($text.Contains($k)) {

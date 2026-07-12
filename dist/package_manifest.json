@@ -26,7 +26,9 @@
     "templates/attestation_report.md",
     "scripts/pqc_discovery.ps1",
     "scripts/build_liboqs_windows.ps1",
+    "scripts/build_release.ps1",
     "docs/liboqs-windows-build.md",
     "sku-bundle.md"
-  ]
+  ],
+  "release_artifact_glob": "dist/pqc_readiness_release_package_v*.zip"
 }
