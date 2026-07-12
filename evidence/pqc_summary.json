@@ -1,0 +1,25 @@
+{
+  "methodology": "pqc-readiness-11-standard",
+  "standards": [
+    "FIPS 203",
+    "FIPS 204",
+    "FIPS 205",
+    "FIPS 206",
+    "SP 800-131A Rev.3",
+    "SP 800-57 Part 1",
+    "SP 800-52 Rev.2",
+    "SP 800-204",
+    "SP 800-161",
+    "NSA CNSA 2.0",
+    "ETSI TS 103 712"
+  ],
+  "host_evidence": {
+    "cng_key_count": 0,
+    "tls13_enabled": false,
+    "tls12_enabled": false,
+    "code_signing_cert_count": 0,
+    "root_ca_count": 0,
+    "intermediate_ca_count": 0
+  },
+  "note": "Live probing requires elevated execution; artifact set is the verifiable ground truth."
+}

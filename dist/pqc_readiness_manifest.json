@@ -1,0 +1,48 @@
+{
+  "sku": "ZQM-PQC-READINESS-001",
+  "generated_at": "2026-07-12T03:53:24.858284+00:00",
+  "methodology": "11-standard PQC readiness",
+  "evidence_files": [
+    {
+      "name": "pqc_algorithm_counts.json",
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+      "bytes": 5
+    },
+    {
+      "name": "pqc_bitlocker.json",
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+      "bytes": 5
+    },
+    {
+      "name": "pqc_ca_roots.json",
+      "sha256": "8997c9b8ab887478314370cb1c76dd6f75c714e1799894598a6fe95fd2b521df",
+      "bytes": 60
+    },
+    {
+      "name": "pqc_cng_keys.json",
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+      "bytes": 5
+    },
+    {
+      "name": "pqc_codesign_certs.json",
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+      "bytes": 5
+    },
+    {
+      "name": "pqc_legacy_certutil.txt",
+      "sha256": "0ffb9d3221280dd5a06efe9c473b173f9eb75b08f26549b0ed9d7480d5591525",
+      "bytes": 530
+    },
+    {
+      "name": "pqc_summary.json",
+      "sha256": "26a97a5bb2951b555adbd9d074c905c3876293376ce2fefffff80ca907ea26b9",
+      "bytes": 580
+    },
+    {
+      "name": "pqc_tls_schannel.json",
+      "sha256": "6c8f1ed1b345931b2a4ac097b3aa69f9aad8385e847e5d52e557c538080b4261",
+      "bytes": 104
+    }
+  ],
+  "verification_note": "Verify all hashes match evidence files; do not regenerate."
+}

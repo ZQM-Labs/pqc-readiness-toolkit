@@ -1,0 +1,30 @@
+{
+  "sku": "ZQM-PQC-READINESS-001",
+  "tiers": [
+    {
+      "tier": "Assessment",
+      "sku": "PQC-ASSESS",
+      "includes": "Discovery + CMS-signed readiness report",
+      "rate": "$350/endpoint"
+    },
+    {
+      "tier": "Pilot",
+      "sku": "PQC-PILOT",
+      "includes": "Assessment + 1 staged hybrid profile",
+      "rate": "$800/endpoint"
+    },
+    {
+      "tier": "Retainer",
+      "sku": "PQC-RETAINER",
+      "includes": "Quarterly reassessment + roadmap updates",
+      "rate": "$500-$2000/mo"
+    }
+  ],
+  "dist_files": [
+    "evidence/pqc_summary.json",
+    "templates/standards_matrix.md",
+    "templates/attestation_report.md",
+    "scripts/pqc_discovery.ps1",
+    "sku-bundle.md"
+  ]
+}
