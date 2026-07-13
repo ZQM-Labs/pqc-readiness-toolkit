@@ -24,7 +24,7 @@ jobs:
       SMTP_PASS: ${{ secrets.GMAIL_APP_PASSWORD }}
       EMAIL_FROM: ${{ secrets.GMAIL_USER }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
