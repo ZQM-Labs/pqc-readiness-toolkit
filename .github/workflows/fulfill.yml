@@ -17,7 +17,7 @@ jobs:
       ISSUE_BODY: ${{ github.event.issue.body }}
       ISSUE_URL: ${{ github.event.issue.html_url }}
       REPO: ${{ github.repository }}
-      RELEASE_URL: https://github.com/ZQM-Computing/pqc-readiness-toolkit/releases/latest/download/zqm_pqc_readiness_package.zip
+      RELEASE_URL: https://github.com/ZQM-Labs/pqc-readiness-toolkit/releases/latest/download/zqm_pqc_readiness_package.zip
       SMTP_HOST: smtp.gmail.com
       SMTP_PORT: 587
       SMTP_USER: ${{ secrets.GMAIL_USER }}
