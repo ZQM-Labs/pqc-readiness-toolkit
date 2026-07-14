@@ -16,7 +16,7 @@ Controls map to templates/standards_matrix.md
 ## Controls Evidence
 - PQC-01..PQC-06 from standards_matrix.md
 - SHA-256 hashes for every evidence file under `evidence/`
-- CMS signature references to ZQM-Computing certificate chain
+- CMS signature references to ZQM Computing certificate chain
 
 ## Roadmap
 - Stage 1: hybrid key exchange in staging
