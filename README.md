@@ -31,3 +31,13 @@ Build OpenQuantumSafe/liboqs on Windows via MSVC/CMake:
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_liboqs_windows.ps1
 ```
 See `docs/liboqs-windows-build.md`.
+
+## Commercial Licensing & Procurement
+
+This repository is free for personal and audit use under its stated license. Enterprise procurement, retainers, and add-on tiers are available:
+
+- Pricing & SKUs: [COMMERCIAL.md](COMMERCIAL.md) · [SKU_CATALOG.md](SKU_CATALOG.md)
+- Start a purchase: open a [Purchase request](https://github.com/ZQM-Labs/pqc-readiness-toolkit/issues/new?template=purchase_request.yml) issue
+- Contact: zqmcomputing@gmail.com
+
+All deliverables are CMS-signed and independently verifiable.
