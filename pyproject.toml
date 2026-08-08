@@ -10,7 +10,7 @@ dependencies = [
     "zqm-intel-platforms>=0.1.0",
 ]
 
-[tool.ruff]
+[tool.ruff.lint]
 line-length = 100
 target-version = "py311"
 select = ["E", "F", "I"]
