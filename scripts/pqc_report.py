@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-import sys,json,hashlib,os
+import hashlib
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -8,15 +9,18 @@ DIST=Path(__file__).resolve().parents[1]/'dist'
 
 def sha256(path=None,data=None):
     h=hashlib.sha256()
-    if data is not None: h.update(data)
-    elif path: h.update(Path(path).read_bytes())
+    if data is not None:
+        h.update(data)
+    elif path:
+        h.update(Path(path).read_bytes())
     return h.hexdigest()
 
 def manifest():
     print('Building PQC Readiness report...')
     files=[]
     for p in sorted(EVIDENCE.glob('pqc_*')):
-        if p.is_file(): files.append((p.name, sha256(p), p.stat().st_size))
+        if p.is_file():
+            files.append((p.name, sha256(p), p.stat().st_size))
     manifest={
         'sku':'ZQM-PQC-READINESS-001',
         'generated_at': datetime.now(timezone.utc).isoformat(),
@@ -28,6 +32,8 @@ def manifest():
     out.write_text(json.dumps(manifest,indent=2),encoding='utf-8')
     print('Wrote',out)
     print('Evidence files:',len(files))
-    for n,h,b in files: print(f'  {b:5d}  {n}  {h}')
+    for n, h, b in files:
+        print(f'  {b:5d}  {n}  {h}')
 
-if __name__=='__main__': manifest()
+if __name__ == '__main__':
+    manifest()

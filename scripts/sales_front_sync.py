@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PQC sales-front sync: consume upstream SKU manifest, localize to PQC SKUs."""
-from pathlib import Path
 import json
+from pathlib import Path
 
 ART = Path(__file__).resolve().parents[1]/'.github'/'sales-front-sync.json'
 ART.parent.mkdir(parents=True, exist_ok=True)

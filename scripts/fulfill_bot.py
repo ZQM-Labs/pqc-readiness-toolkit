@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """ZQM Toolkit fulfillment bot (generic, repo-agnostic)."""
-import os, re, json, secrets, smtplib
+import json
+import os
+import re
+import secrets
+import smtplib
 from email.message import EmailMessage
 
 issue_body = os.environ.get('ISSUE_BODY', '')

@@ -10,13 +10,15 @@ dependencies = [
     "zqm-intel-platforms>=0.1.0",
 ]
 
-[tool.ruff.lint]
+[tool.ruff]
 line-length = 100
 target-version = "py311"
+src = ["scripts", "tests"]
+exclude = [".git", "__pycache__", "dist", "build", "vendor/liboqs"]
+
+[tool.ruff.lint]
 select = ["E", "F", "I"]
 ignore = ["E501"]
-exclude = [".git", "__pycache__", "dist", "build", "vendor/liboqs"]
-src = ["scripts", "tests"]
 
 [tool.mypy]
 python_version = "3.11"
