@@ -58,3 +58,11 @@ Apache-2.0 — see LICENSE file.
 
 Alex Zelenski — zqmcomputing@gmail.com
 Brand: ZQM Computing / ZQM-Labs
+
+## Related Repositories
+
+- [ZQM-Labs/zqm-attestation-toolkit](https://github.com/ZQM-Labs/zqm-attestation-toolkit) — Windows attestation, BitLocker, TPM, DFIR, and AI integrity
+- [ZQM-Labs/zqm-public-tools](https://github.com/ZQM-Labs/zqm-public-tools) — open-source Windows security, DFIR, and PowerShell utilities
+- [ZQM-Labs/zqm-attestation-briefs](https://github.com/ZQM-Labs/zqm-attestation-briefs) — attestation methodology samples and compliance guides
+- [ZQM-Labs/zqm-security-policy](https://github.com/ZQM-Labs/zqm-security-policy) — CIS benchmarks, Windows hardening, and compliance runbooks
+- [ZQM-Computing/mesh-forensics](https://github.com/ZQM-Computing/mesh-forensics) — ZQM LAN forensics and incident response
