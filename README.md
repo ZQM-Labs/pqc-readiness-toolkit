@@ -41,3 +41,6 @@ This repository is free for personal and audit use under its stated license. Ent
 - Contact: zqmcomputing@gmail.com
 
 All deliverables are CMS-signed and independently verifiable.
+
+## Integration: zqm-intel-platforms
+This repo vendors `zqm-intel-platforms>=0.1.0` as a dependency. Use the shared SIEM/OSINT/CTI wrappers for Splunk HEC, Loki, and Windows-telemetry export defined in that package.
