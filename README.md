@@ -1,46 +1,60 @@
-# ZQM PQC Readiness Toolkit
-NIST/ETSI/CNSA 2.0 post-quantum cryptography readiness methodology for Windows fleets.
+# pqc-readiness-toolkit
 
-SKU: `ZQM-PQC-READINESS-001`
-License: Apache-2.0 (tooling); commercial deliverables sold separately.
+NIST/ETSI/CNSA 2.0 PQC readiness assessment for Windows fleets.
 
-## What this is
-- Methodology: 11-standard map covering NIST FIPS 203/204/205/206, SP 800-131A Rev.3, SP 800-57 Part 1, SP 800-52 Rev.2, SP 800-204, SP 800-161, NSA CNSA 2.0, and ETSI TS 103 712.
-- PowerShell discovery module: CNG certs, Schannel/TLS, BitLocker, smart-card logon, code-signing, CA trust stores.
-- Evidence pack: JSON + text artifacts with SHA-256 ledger.
-- Deliverable template: CMS-signed readiness report + migration roadmap.
+## About
 
-## Sellable SKU tiers
-- `PQC-ASSESS` $350/endpoint: discovery + CMS-signed readiness report
-- `PQC-PILOT` $800/endpoint: assessment + 1 staged hybrid profile
-- `PQC-RETAINER` $500–$2000/mo: quarterly reassessment + roadmap updates
+`pqc-readiness-toolkit` evaluates Windows host and fleet readiness for post-quantum cryptography transitions. It covers NIST PQC standards, ETSI quantum-safe migration guidance, and CNSA 2.0 Suite B alignment for Windows environments.
 
-## Repo shape
-- `templates/standards_matrix.md`
-- `templates/attestation_report.md`
-- `scripts/pqc_discovery.ps1`
-- `scripts/pqc_report.py`
-- `sku-bundle.md`
+## Installation
 
-## Commercial contact
-zqmcomputing@gmail.com
-
-## Native Windows build
-Build OpenQuantumSafe/liboqs on Windows via MSVC/CMake:
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_liboqs_windows.ps1
+```bash
+pip install -e .
 ```
-See `docs/liboqs-windows-build.md`.
 
-## Commercial Licensing & Procurement
+Requires Python 3.11+.
 
-This repository is free for personal and audit use under its stated license. Enterprise procurement, retainers, and add-on tiers are available:
+## Usage
 
-- Pricing & SKUs: [COMMERCIAL.md](COMMERCIAL.md) · [SKU_CATALOG.md](SKU_CATALOG.md)
-- Start a purchase: open a [Purchase request](https://github.com/ZQM-Labs/pqc-readiness-toolkit/issues/new?template=purchase_request.yml) issue
-- Contact: zqmcomputing@gmail.com
+```bash
+# Run PQC readiness scan
+pqc-readiness scan --endpoint .
 
-All deliverables are CMS-signed and independently verifiable.
+# Generate CNSA 2.0 compliance report
+pqc-readiness report --template cnsa2 --output ./reports/
+
+# Assess against NIST standards
+pqc-readiness assess --standard nist-800-208
+```
+
+## Features
+
+- NIST PQC standard compatibility checks (CRYSTALS-Kyber, Dilithium, SPHINCS+)
+- ETSI quantum-safe migration pathway assessment
+- CNSA 2.0 Suite B alignment validation
+- Windows-native crypto stack inventory
+- Fleet-wide PQC readiness aggregation via zqm-intel-platforms
+- Markdown and JSON report output
+- CI-validated with ruff/mypy
+
+## CI
+
+[![CI](https://github.com/ZQM-Labs/pqc-readiness-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/ZQM-Labs/pqc-readiness-toolkit/actions)
+[![Ruff](https://img.shields.io/badge/lint-ruff-blue)](https://github.com/astral-sh/ruff)
+[![Mypy](https://img.shields.io/badge/typecheck-mypy-blue)](https://github.com/python/mypy)
 
 ## Integration: zqm-intel-platforms
-This repo vendors `zqm-intel-platforms>=0.1.0` as a dependency. Use the shared SIEM/OSINT/CTI wrappers for Splunk HEC, Loki, and Windows-telemetry export defined in that package.
+
+`pqc-readiness-toolkit` declares `zqm-intel-platforms>=0.1.0` and feeds PQC assessment results into the fleet attestation mesh.
+
+- Hub role: quantum-readiness telemetry aggregation
+- Downstream: zqm-attestation-toolkit, ZQM-AI-Council
+
+## License
+
+Apache-2.0 — see LICENSE file.
+
+## Contact
+
+Alex Zelenski — zqmcomputing@gmail.com
+Brand: ZQM Computing / ZQM-Labs
