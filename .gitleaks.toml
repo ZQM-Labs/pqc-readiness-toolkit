@@ -1,12 +1,10 @@
-title = "ZQM gitleaks configuration"
-
-[extend]
-useDefault = true
-
 [allowlist]
+description = "Allow GitHub Actions secret references and workflow metadata"
+regexes = [
+  '''\$\{\{\s*secrets\.GITHUB_TOKEN\s*\}\}''',
+  '''\$\{\{\s*github\.token\s*\}\}''',
+  '''GITHUB_TOKEN.*\$\{\{''',
+]
 paths = [
-  '.*\.pytest_cache.*',
-  '.*/vendor/.*',
-  '.*/dist/.*\.json',
-  '.*release.*\.json',
+  '''\.github/workflows/''',
 ]
